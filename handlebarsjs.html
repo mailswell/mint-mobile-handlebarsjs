@@ -1,0 +1,399 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="color-scheme" content="light dark">
+   <meta name="supported-color-schemes" content="light dark">
+	<title>HandlbarsJS in Email Example</title>
+   <style type="text/css">
+   	@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+      table {
+			border-spacing: 0;
+		}
+      td {
+         padding: 0;
+      }
+      p {
+         font-size: 15px;
+      }
+      img {
+         border: 0;
+      }
+      a {
+         text-decoration: none;
+         color: #e8fbfa;
+         font-size: 16px;
+      }
+      .content {
+         line-height: 20px;
+         font-size: 15px;
+      }
+
+      @media screen and (max-width: 599.98px) {
+         .container {
+            width: 100%!important;
+         }
+         .two-col {
+            width: 100%!important;
+         }
+      }
+
+      /* Custom Dark Mode Colors *
+      :root {
+         color-scheme: light dark;
+         supported-color-schemes: light dark;
+      }
+      @media (prefers-color-scheme: dark) {
+         body, center, table, .darkmode-bg {
+            background: #2d2d2d!important;
+            color: #ffffff!important;
+         }
+         .darkmode-transparent {
+            background-color: transparent!important;
+         }
+      }*/
+   </style>
+   
+	<!--[if (gte mso 9)|(IE)]>
+		<style type="text/css">
+			table {border-collapse: collapse !important;}
+		</style>
+	<![endif]-->
+	
+</head>
+<body style="Margin:0;padding:0;min-width:100%;background-color:#EEEEEE;">
+
+   <div id="mint-container"></div>
+    
+   <script id="mintTemplate" type="text/x-handlebars-template">
+   {{#each subscriber}}
+   
+       <div class="container" style="color: #222;text-align: center;width: 600px;margin: 0 auto;">
+
+         <div class="two-col" style="width: 50%;float: left;display: block;">
+            <p style="font-size: 18px; text-align: center;">firstName: <span style="font-weight: bold;color: #68AF85;"> {{firstName}}</span></p>
+            <p style="font-size: 18px; text-align: center;">orderNumber: <span style="font-weight: bold;color: #68AF85;"> {{orderNumber}}</span></p>
+            <p style="font-size: 18px; text-align: center;">purchaseDate: <span style="font-weight: bold;color: #68AF85;"> {{purchaseDate}}</span></p>
+            <p style="font-size: 18px; text-align: center;">lastRenewal: <span style="font-weight: bold;color: #68AF85;"> {{lastRenewal}}</span></p>
+            <p style="font-size: 18px; text-align: center;">renewalDate: <span style="font-weight: bold;color: #68AF85;"> {{renewalDate}}</span></p>
+         </div>
+         <div class="two-col" style="width: 50%;float: left;display: block;">
+            <p style="font-size: 18px; text-align: center;">planLength: <span style="font-weight: bold;color: #68AF85;"> {{planLength}}</span></p>
+            <p style="font-size: 18px; text-align: center;">planSize: <span style="font-weight: bold;color: #68AF85;"> {{planSize}}</span></p>
+            <p style="font-size: 18px; text-align: center;">planPrice: <span style="font-weight: bold;color: #68AF85;"> {{planPrice}}</span></p>
+            <p style="font-size: 18px; text-align: center;">planTax: <span style="font-weight: bold;color: #68AF85;"> {{planTax}}</span></p>
+            <p style="font-size: 18px; text-align: center;">planTotal: <span style="font-weight: bold;color: #68AF85;"> {{planTotal}}</span></p>
+         </div>
+   
+       </div>
+   {{/each}}
+   </script>
+
+
+   <!--[if (gte mso 9)|(IE)]>
+      <style type="text/css">
+         body {background-color: #EEEEEE!important;}
+         body, table, td, p, a {font-family: sans-serif, Arial, Helvetica!important;}
+      </style>
+   <![endif]-->
+
+   <center style="width: 100%;table-layout:fixed;background-color: #EEEEEE;padding: 0 0 40px 0;">
+      <div style="max-width: 600px;background-color: #fafdfe;box-shadow: 0 0 10px rgba(0, 0, 0, .2);">
+
+         <!-- Preheader (remove comment) -->
+         <div style="font-size: 0px;color: #fafdfe;line-height: 1px;mso-line-height-rule:exactly;display: none;max-width: 0px;max-height: 0px;opacity: 0;overflow: hidden;mso-hide:all;">
+            {{firstName}}, Your Plan Is All Renewed
+         </div>
+         <!-- End Preheader (remove comment) -->
+
+         <!-- Insert &#847;&zwnj;&nbsp; hack after hidden preview text -->
+         <div style="display: none; max-height: 0px; overflow: hidden;">
+            &#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;
+         </div>
+      
+         <!--[if (gte mso 9)|(IE)]>
+            <table width="600" align="center" style="border-spacing:0;color:#565656;" role="presentation">
+            <tr>
+            <td style="padding:0;">
+         <![endif]-->
+
+         <table align="center" style="border-spacing:0;color:#565656;font-family: 'Lato',sans-serif, Arial, Helvetica;background-color: #fafdfe;Margin:0;padding:0;width: 100%;max-width: 600px;" role="presentation">
+
+
+<!-- START INTRO -->
+            <tr>
+               <td style="padding:0;">
+                  <table width="100%" style="border-spacing:0;" role="presentation">
+                  
+                     <tr>
+                        <td height="3" style="background-color: #68AF85;"></td>
+                     </tr>
+                     <tr>
+                        <td style="padding:5px 10px 5px 10px;">
+                           <p style="font-size: 15px;line-height: 20px; text-align: center;">Mint Mobile has received a lot of praise for their email marketing and the personality in their marketing messages. In this design, I rebuilt part of a plan renewal email I received using for a <span style="font-weight: bold;color: #68AF85;"> personalization</span> example that can be used with Handlbars.js & JSON data.</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td height="2" style="background-color: #68AF85;"></td>
+                     </tr>
+
+                  </table>
+               </td>
+            </tr>
+<!-- END INTRO -->
+
+<!-- START LOGO -->
+            <tr>
+               <td style="padding:0;">
+                  <table width="100%" style="border-spacing:0;" role="presentation">
+
+                     <tr>
+                        <td class="darkmode-bg" style="background-color: #fafdfe;padding: 13px 0 20px 0;text-align: center;">
+                           <a href="https://example.com" target="_blank">
+                              <img src="https://d3k81ch9hvuctc.cloudfront.net/company/H8tAtU/images/a0b73b3e-1c25-4667-a071-cc88e55920a9.png" alt="Mint Mobile" title="Mint Mobile" width="180" border="0">
+                           </a>
+                        </td>
+                     </tr>
+
+                  </table>
+               </td>
+            </tr>
+<!-- END LOGO -->
+
+
+<!-- START BANNER -->
+            <tr>
+               <td style="padding: 0;">
+                  <a href="https://example.com" target="_blank"><img src="https://d3k81ch9hvuctc.cloudfront.net/company/KYFLiq/images/7c96097e-ebbc-4a3c-8507-8304986141b9.jpeg" title="All Renewed" alt="All Renewed" width="600" style="max-width: 100%;"></a>
+               </td>
+            </tr>
+<!-- END BANNER -->
+
+<!-- START TEXT BODY -->
+            <tr>
+               <td style="padding:0;">
+                  <table width="100%" style="border-spacing:0;" role="presentation">
+                     <tr>
+                        <td style="padding:10px 20px 10px 20px;">
+                           <p style="font-size: 16px;line-height: 26px;text-align: center;"><span style="font-weight: bold;color: #68AF85;">{{firstName}}</span>, a new Mint <span style="font-weight: bold;color: #68AF85;">{{planLength}}</span> - <span style="font-weight: bold;color: #68AF85;">{{planSize}}</span> plan is all yours,</p>
+                           <p style="font-size: 16px;line-height: 26px;text-align: center;">
+                              Remember that time you switched to Mint Mobile and saved a truckload of money? Of course you do, because you just renewed your plan. And we sure do appreciate that. Your new <span style="font-weight: bold;color: #68AF85;">{{planLength}}</span> - <span style="font-weight: bold;color: #68AF85;">{{planSize}}</span> plan has started on <span style="font-weight: bold;color: #68AF85;">{{lastRenewal}}</span>. Now you just have to decide what you're going to do with all the money you saved this time around.</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:0px 10px 0px 10px;">
+                           <p style="font-size: 17px;font-weight: bold;text-align: center;">You go, new you,</p>
+                        </td>
+                     </tr>
+
+                  </table>
+               </td>
+            </tr>
+<!-- END TEXT BODY -->
+
+<!-- START LOGO -->
+            <tr>
+               <td style="padding:0;">
+                  <table width="100%" style="border-spacing:0;" role="presentation">
+
+                     <tr>
+                        <td class="darkmode-bg" style="background-color: #fafdfe;padding: 10px 0 30px 0;text-align: center;">
+                           <a href="https://example.com" target="_blank">
+                              <img src="https://d3k81ch9hvuctc.cloudfront.net/company/H8tAtU/images/b3969099-3cd8-4d82-af85-c248cfba79a2.png" alt="Mint Mobile" title="Mint Mobile" width="140" border="0">
+                           </a>
+                        </td>
+                     </tr>
+
+                  </table>
+               </td>
+            </tr>
+<!-- END LOGO -->
+
+<!-- START ORDER DETAILS -->
+            <tr>
+               <td style="padding: 20px 0 0 0;background-color: #E7E7E7;">
+                  <table width="100%" style="border-spacing:0;" role="presentation">
+                     <tr>
+                        <td style="padding:0px 20px 0px 20px;">
+                           <p style="font-size: 18px;font-weight: bold;letter-spacing: 1px; text-align: center;">ORDER DETAILS</p>
+                           <p style="font-size: 16px;line-height: 22px;text-align: center;">Your order number is <span style="font-weight: bold;color: #68AF85;">{{orderNumber}}</span></p>
+                           <p style="font-size: 16px;line-height: 22px;text-align: center;">Date renewed <span style="font-weight: bold;color: #68AF85;">{{renewalDate}}</span></p>
+                        </td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+<!-- END ORDER DETAILS -->
+
+<!-- START PLAN DETAILS -->
+            <tr>
+               <td style="padding: 0;background-color: #E7E7E7;">
+                  <table width="100%" style="border-spacing:0;width:100%;max-width:320px;border-bottom: 1px solid #999999;" align="center" role="presentation">
+                     <tr>
+                        <td class="two-columns" style="padding:0;font-size:0;text-align: center;">
+
+                           <table class="column" style="border-spacing:0;vertical-align:top;width:100%;max-width:160px;display:inline-block;" role="presentation">
+                              <tr>
+                                 <td style="padding: 0px;">
+
+                                    <table class="content" style="border-spacing:0;text-align: center;" role="presentation">
+                                       
+                                       <tr>
+                                          <td style="padding:0;width: 200px;">
+                                             <p style="font-size: 16px;line-height: 22px;text-align: center;">Mint <span style="font-weight: bold;color: #68AF85;">{{planSize}}</span> plan</p>
+                                             <p style="font-size: 16px;line-height: 22px;font-weight:bold;text-align: center;">Taxes & Fees</p>
+                                          </td>
+                                       </tr>
+                                       
+                                    </table>
+
+                                 </td>
+                              </tr>
+                           </table>
+
+                           <table class="column" style="border-spacing:0;vertical-align:top;width:100%;max-width:160px;display:inline-block;" role="presentation">
+                              <tr>
+                                 <td style="padding:0px;">
+
+                                    <table class="content" style="border-spacing:0;text-align: center;" role="presentation">
+                                       
+                                       <tr>
+                                          <td style="padding:0;width: 200px;">
+                                             <p style="font-size: 16px;line-height: 22px;text-align: center;"><span style="font-weight: bold;color: #68AF85;">{{planPrice}}</span></p>
+                                             <p style="font-size: 16px;line-height: 22px;text-align: center;"><span style="font-weight: bold;color: #68AF85;">{{planTax}}</span></p>
+                                          </td>
+                                       </tr>
+                                       
+                                    </table>
+
+                                 </td>
+                              </tr>
+                           </table>
+
+                        </td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+<!-- END PLAN DETAILS -->
+
+<!-- START PLAN TOTAL -->
+            <tr>
+               <td style="padding: 0 0 30px 0;background-color: #E7E7E7;">
+                  <table width="100%" style="border-spacing:0;width:100%;max-width:320px;" align="center" role="presentation">
+                     <tr>
+                        <td class="two-columns" style="padding:0;font-size:0;text-align: center;">
+
+                           <table class="column" style="border-spacing:0;vertical-align:top;width:100%;max-width:160px;display:inline-block;" role="presentation">
+                              <tr>
+                                 <td style="padding: 0px;">
+
+                                    <table class="content" style="border-spacing:0;text-align: center;" role="presentation">
+                                       
+                                       <tr>
+                                          <td style="padding:0;width: 200px;">
+                                             <p style="font-size: 16px;line-height: 22px;font-weight:bold;text-align: center;">TOTAL</p>
+                                          </td>
+                                       </tr>
+                                       
+                                    </table>
+
+                                 </td>
+                              </tr>
+                           </table>
+
+                           <table class="column" style="border-spacing:0;vertical-align:top;width:100%;max-width:160px;display:inline-block;" role="presentation">
+                              <tr>
+                                 <td style="padding:0px;">
+
+                                    <table class="content" style="border-spacing:0;text-align: center;" role="presentation">
+                                       
+                                       <tr>
+                                          <td style="padding:0;width: 200px;">
+                                             <p style="font-size: 16px;line-height: 22px;text-align: center;"><span style="font-weight: bold;color: #68AF85;">{{planTotal}}</span></p>
+                                          </td>
+                                       </tr>
+                                       
+                                    </table>
+
+                                 </td>
+                              </tr>
+                           </table>
+
+                        </td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+<!-- END PLAN TOTAL -->
+
+<!-- START YELLOW PLAN DETAILS -->
+            <tr>
+               <td style="padding: 30px 0 30px 0;background-color: #F6B938;">
+                  <table width="100%" style="border-spacing:0;" role="presentation">
+
+                     <tr>
+                        <td class="darkmode-bg" style="padding:0;text-align: center;">
+                           <a href="https://example.com" target="_blank">
+                              <img src="https://d3k81ch9hvuctc.cloudfront.net/company/KYFLiq/images/d82a0586-1114-4530-ac00-72669a2f7302.png" alt="Mint Mobile" title="Mint Mobile" width="220" border="0">
+                           </a>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="padding:0 20px 0 20px;color: #ffffff;">
+                           <p style="font-size: 22px;line-height: 24px;font-weight: bold;letter-spacing: 1px; text-align: center;color: #ffffff;">YOUR PLAN DETAILS</p>
+                           <p style="font-size: 16px;line-height: 22px;text-align: center;color: #ffffff;">Plan length: <span style="font-weight: bold;color: #68AF85;">{{planLength}}</span></p>
+                           <p style="font-size: 16px;line-height: 22px;text-align: center;color: #ffffff;">Your Data: <span style="font-weight: bold;color: #68AF85;">{{planSize}}</span></p>
+                           <p style="font-size: 16px;line-height: 22px;text-align: center;color: #ffffff;">Auto Renew: <span style="font-weight: bold;color: #68AF85;">{{autoRenewA}}</span></p>
+                        </td>
+                     </tr>
+
+                  </table>
+               </td>
+            </tr>
+<!-- END YELLOW PLAN DETAILS -->
+
+<!-- START OUTRO -->
+            <tr>
+               <td style="padding:0;">
+                  <table width="100%" style="border-spacing:0;" role="presentation">
+                  
+                     <tr>
+                        <td height="2" style="background-color: #68AF85;"></td>
+                     </tr>
+                     <tr>
+                        <td style="padding:5px 10px 5px 10px;">
+                           <p style="font-size: 16px;line-height: 20px; text-align: center;">This concludes the <span style="font-weight: bold;color: #68AF85;"> personalization</span> with Handlebars.js.</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td height="3" style="background-color: #68AF85;"></td>
+                     </tr>
+
+                  </table>
+               </td>
+            </tr>
+<!-- END OUTRO -->
+
+
+         </table>
+
+         <!--[if (gte mso 9)|(IE)]>
+         </td>
+         </tr>
+         </table>
+         <![endif]-->
+      
+      </div>
+   </center>
+
+
+<!-- jQuery & HandlebarsJS -->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="tut.js"></script>
+
+</body>
+</html>
